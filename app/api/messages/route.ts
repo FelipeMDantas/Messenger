@@ -31,6 +31,8 @@ export async function POST(request: Request) {
       },
       include: { users: true, messages: { include: { seen: true } } },
     });
+
+    return NextResponse.json(newMessage);
   } catch (error: any) {
     console.log(error, "ERROR_MESSAGES");
     return new NextResponse("InternalError", { status: 500 });
