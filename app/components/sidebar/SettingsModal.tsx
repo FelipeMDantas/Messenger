@@ -5,6 +5,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import Modal from "../Modal";
 
 interface SettingsModalProps {
   isOpen?: boolean;
@@ -17,7 +19,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
   onClose,
   currentUser,
 }) => {
-  const route = useRouter();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -42,10 +44,29 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    axios.post("/api/settings", data);
+    axios
+      .post("/api/settings", data)
+      .then(() => {
+        router.refresh();
+        onClose();
+      })
+      .catch(() => toast.error("Something went wrong."))
+      .finally(() => setIsLoading(false));
   };
 
-  return <div>SettingsModal</div>;
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="space-y-12">
+          <div className="border-b border-gray-900/10 pb-12">
+            <h2 className="text-base font-semibold leading-7 text-gray-900">
+              Profile
+            </h2>
+          </div>
+        </div>
+      </form>
+    </Modal>
+  );
 };
 
 export default SettingsModal;
