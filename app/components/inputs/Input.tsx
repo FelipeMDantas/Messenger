@@ -33,7 +33,7 @@ const Input: React.FC<InputProps> = ({
       </label>
       <div className="mt-2">
         <input
-          type={type}
+          type={type || "text"}
           id={id}
           autoComplete={id}
           disabled={disabled}
