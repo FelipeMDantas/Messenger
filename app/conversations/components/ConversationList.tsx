@@ -16,6 +16,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
   initialItems,
 }) => {
   const [items, setItems] = useState(initialItems);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const { conversationId, isOpen } = useConversation();
 
@@ -30,7 +31,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
       <div className="px-5">
         <div className="flex justify-between mb-4 pt-4">
           <div className="text-2xl font-bold text-netral-800">Messages</div>
-          <div className="rounded-full p-2 bg-gray-100 text-gray-600 cursor-pointer hover:opacity-75 transition">
+          <div
+            className="rounded-full p-2 bg-gray-100 text-gray-600 cursor-pointer hover:opacity-75
+            transition"
+            onClick={() => setIsModalOpen(true)}
+          >
             <MdOutlineGroupAdd size={20} />
           </div>
         </div>
