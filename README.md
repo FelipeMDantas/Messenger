@@ -33,6 +33,15 @@ A couple of technologies were employed in this project. Among them:
 - [Prisma] - an ORM for Node.js and TypeScript
 - [Axios] - a promise-based HTTP Client for NodeJS and the browser
 - [Bcrypt] - a library for passwords hashing
+- [Clsx] - an utility for constructing className strings conditionally
+- [Date-fns] - provides a toolset for manipulating dates
+- [Lodash] - a JavaScript utility library that delivers modularity
+- [Cloudinary] - an Image and Video API
+- [Pusher] - provides bi-directional hosted APIs
+- [React Hook Form] - forms with easy-to-use validation
+- [React Hot Toast] - provies React notifications
+- [React Select] - a flexible Select Input control for ReactJS
+- [React Spinners] - a collection of loading spinners with ReactJS
 - [Prettier] - a code formatter
 
   [reactjs]: https://reactjs.org/
@@ -46,4 +55,13 @@ A couple of technologies were employed in this project. Among them:
   [prisma]: https://www.prisma.io/
   [axios]: https://axios-http.com/docs/intro
   [bcrypt]: https://www.npmjs.com/package/bcrypt
+  [clsx]: https://www.npmjs.com/package/clsx
+  [date-fns]: https://www.npmjs.com/package/date-fns
+  [lodash]: https://lodash.com/
+  [cloudinary]: https://cloudinary.com/
+  [pusher]: https://pusher.com/
+  [react hook form]: https://www.react-hook-form.com/
+  [react hot toast]: https://react-hot-toast.com/
+  [react select]: https://react-select.com/home
+  [react spinners]: https://www.npmjs.com/package/react-spinners
   [prettier]: https://prettier.io/
